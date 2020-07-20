@@ -1,9 +1,19 @@
 {
-  "dependencies": {},
-  "devDependencies": {
-    "@prisma/cli": "^2.2.2",
-    "@types/node": "^14.0.23",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
-  }
+	"name": "graphqlapi",
+	"version": "1.0.0",
+	"description": "'One and oh' is a new fantasy football platform",
+	"license": "MIT",
+	"scripts": {
+		"start": "nodemon --exec ts-node index.ts"
+	},
+	"dependencies": {
+		"@prisma/client": "^2.2.2"
+	},
+	"devDependencies": {
+		"@prisma/cli": "^2.2.2",
+		"@types/node": "^14.0.23",
+		"nodemon": "^2.0.4",
+		"ts-node": "^8.10.2",
+		"typescript": "^3.9.7"
+	}
 }
