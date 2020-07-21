@@ -1,32 +1,10 @@
 {
-	"compilerOptions": {
-		"experimentalDecorators": true,
-		"sourceMap": true,
-		"outDir": "dist",
-		"strict": true,
-		"lib": ["esnext", "dom", "es2017", "esnext.asynciterable"],
-		"esModuleInterop": true,
-		"moduleResolution": "node",
-		"declaration": false,
-		"composite": false,
-		"removeComments": true,
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"noImplicitThis": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"allowSyntheticDefaultImports": true,
-		"emitDecoratorMetadata": true,
-		"skipLibCheck": true,
-		"baseUrl": ".",
-		"rootDir": ".",
-		"plugins": [{ "name": "nexus/typescript-language-service" }],
-		"typeRoots": ["node_modules/@types", "types"],
-		"noEmit": true
-	},
-	"exclude": ["node_modules"],
-	"include": ["types.d.ts", "."]
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "strict": true
+  },
+  "include": ["src/**/*"]
 }

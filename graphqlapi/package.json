@@ -1,34 +1,36 @@
 {
-	"name": "graphqlapi",
-	"version": "1.0.0",
-	"description": "'One and oh' is a new fantasy football platform",
-	"license": "MIT",
-	"scripts": {
-		"start": "nodemon --exec ts-node index.ts",
-		"studio": "npx prisma studio --experiment",
-		"intro": "npx prisma introspect",
-		"gen": "npx prisma generate",
-		"dev": "nexus dev",
-		"build": "nexus build"
-	},
-	"dependencies": {
-		"@prisma/client": "^2.2.2",
-		"apollo-server-express": "^2.16.0",
-		"express": "^4.17.1",
-		"express-session": "^1.17.1",
-		"graphql": "^15.3.0",
-		"nexus": "^0.25.0",
-		"nexus-plugin-prisma": "^0.16.1"
-	},
-	"devDependencies": {
-		"@prisma/cli": "^2.2.2",
-		"@types/express": "^4.17.7",
-		"@types/express-session": "^1.17.0",
-		"@types/graphql": "^14.5.0",
-		"@types/node": "^14.0.23",
-		"nodemon": "^2.0.4",
-		"reflect-metadata": "^0.1.13",
-		"ts-node": "^8.10.2",
-		"typescript": "^3.9.7"
-	}
+  "name": "typescript-graphql",
+  "scripts": {
+    "start": "node dist/server",
+    "clean": "rm -rf dist",
+    "build": "npm -s run clean && npm -s run generate && tsc",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma generate",
+    "generate:nexus": "ts-node --transpile-only src/schema",
+    "postinstall": "npm -s run generate",
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server"
+  },
+  "dependencies": {
+    "@nexus/schema": "0.14.0",
+    "@prisma/client": "2.3.0",
+    "@types/node-fetch": "2.5.7",
+    "apollo-server": "2.15.1",
+    "graphql": "15.3.0",
+    "nexus-prisma": "0.12.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "2.3.0",
+    "@types/node": "12.12.50",
+    "ts-node": "8.10.2",
+    "ts-node-dev": "1.0.0-pre.50",
+    "typescript": "3.9.6"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
