@@ -9,8 +9,8 @@ datasource db {
 
 model User {
   id        Int      @default(autoincrement()) @id
-  email     String
   username  String
   birthdate DateTime
   phone_num String
+  email     String   @unique
 }

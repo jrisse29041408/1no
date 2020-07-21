@@ -5,11 +5,14 @@
 scalar DateTime
 
 type Mutation {
+  deleteUser(where: UserWhereUniqueInput!): User
   signupUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
 }
 
 type Query {
-  ok: Boolean!
+  getUser(where: UserWhereUniqueInput!): User
+  getUsers(skip: Int): [User!]!
 }
 
 type User {
@@ -25,4 +28,16 @@ input UserCreateInput {
   email: String!
   phone_num: String!
   username: String!
+}
+
+input UserUpdateInput {
+  birthdate: DateTime
+  email: String
+  phone_num: String
+  username: String
+}
+
+input UserWhereUniqueInput {
+  email: String
+  id: Int
 }
