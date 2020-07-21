@@ -23,7 +23,10 @@
 		"skipLibCheck": true,
 		"baseUrl": ".",
 		"rootDir": ".",
-		"plugins": [{ "name": "nexus/typescript-language-service" }]
+		"plugins": [{ "name": "nexus/typescript-language-service" }],
+		"typeRoots": ["node_modules/@types", "types"],
+		"noEmit": true
 	},
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules"],
+	"include": ["types.d.ts", "."]
 }
