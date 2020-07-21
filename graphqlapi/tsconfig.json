@@ -22,7 +22,8 @@
 		"emitDecoratorMetadata": true,
 		"skipLibCheck": true,
 		"baseUrl": ".",
-		"rootDir": "."
+		"rootDir": ".",
+		"plugins": [{ "name": "nexus/typescript-language-service" }]
 	},
 	"exclude": ["node_modules"]
 }
