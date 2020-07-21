@@ -4,15 +4,27 @@
 	"description": "'One and oh' is a new fantasy football platform",
 	"license": "MIT",
 	"scripts": {
-		"start": "nodemon --exec ts-node index.ts"
+		"start": "nodemon --exec ts-node index.ts",
+		"studio": "npx prisma studio --experiment",
+		"intro": "npx prisma introspect",
+		"gen": "npx prisma generate"
 	},
 	"dependencies": {
-		"@prisma/client": "^2.2.2"
+		"@prisma/client": "^2.2.2",
+		"apollo-server-express": "^2.16.0",
+		"express": "^4.17.1",
+		"express-session": "^1.17.1",
+		"graphql": "^15.3.0",
+		"nexus-plugin-prisma": "^0.16.1"
 	},
 	"devDependencies": {
 		"@prisma/cli": "^2.2.2",
+		"@types/express": "^4.17.7",
+		"@types/express-session": "^1.17.0",
+		"@types/graphql": "^14.5.0",
 		"@types/node": "^14.0.23",
 		"nodemon": "^2.0.4",
+		"reflect-metadata": "^0.1.13",
 		"ts-node": "^8.10.2",
 		"typescript": "^3.9.7"
 	}

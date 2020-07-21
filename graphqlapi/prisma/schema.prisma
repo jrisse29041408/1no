@@ -7,16 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model profiles {
-  birthdate    DateTime
-  phone_number String
-  user_id      Int      @id
-  username     String
-  users        users    @relation(fields: [user_id], references: [id])
-}
-
-model users {
-  email    String     @unique
-  id       Int        @default(autoincrement()) @id
-  profiles profiles[]
+model User {
+  birthdate DateTime
+  email     String
+  id        Int      @default(autoincrement()) @id
+  phone_num String
+  username  String
 }
