@@ -8,9 +8,9 @@ datasource db {
 }
 
 model User {
-  id        Int      @default(autoincrement()) @id
+  id        Int    @default(autoincrement()) @id
   username  String
-  birthdate DateTime
   phone_num String
-  email     String   @unique
+  email     String @unique
+  birthdate String
 }

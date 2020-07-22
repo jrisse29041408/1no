@@ -2,7 +2,17 @@
 ### Do not make changes to this file directly
 
 
-scalar DateTime
+type Birthdate {
+  day: Int!
+  month: Int!
+  year: Int!
+}
+
+input BirthdateInput {
+  day: Int
+  month: Int
+  year: Int
+}
 
 type Mutation {
   deleteUser(where: UserWhereUniqueInput!): User
@@ -16,7 +26,7 @@ type Query {
 }
 
 type User {
-  birthdate: DateTime!
+  birthdate: String!
   email: String!
   id: Int!
   phone_num: String!
@@ -24,14 +34,14 @@ type User {
 }
 
 input UserCreateInput {
-  birthdate: DateTime!
+  birthdate: String!
   email: String!
   phone_num: String!
   username: String!
 }
 
 input UserUpdateInput {
-  birthdate: DateTime
+  birthdate: String
   email: String
   phone_num: String
   username: String
